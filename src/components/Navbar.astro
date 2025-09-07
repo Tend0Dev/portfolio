@@ -1,0 +1,75 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+import logoDark from "../assets/logoDark.png";
+import IconClose from "../assets/cross-1.svg";
+import IconOpen from "../assets/hamburger-menu.svg";
+import ThemeToggle from "./react/ThemeToggle";
+import NavbarReact from "./react/NavbarReact";
+import { useTranslation } from "../i18n/utils";
+import { labels, type LanguagesList } from "../i18n/ui";
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+
+const t = useTranslation(currentLang as keyof typeof LanguagesList);
+
+const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
+---
+
+<nav
+  class="mx-2 p-4 flex justify-between items-center bg-menu rounded-xl mt-3 mb-6"
+>
+  <a href="#" class="flex items-center font-bold text-xl">
+    Angel<span class="text-primary">{hero.portfolio}</span></a
+  >
+
+  <IconOpen
+    id="open-btn"
+    class="size-6 items-center cursor-pointer hover:stroke-[2]"
+  />
+
+  <div id="menu-modal" class="bg-black/70 fixed inset-0 hidden">
+    <ul
+      class="flex flex-col h-80 w-64 gap-1 items-center bg-menu/85 absolute right-1 top-2 rounded-md py-5 place-content-evenly"
+    >
+      <IconClose
+        id="close-btn"
+        class="size-6 stroke-foreground cursor-pointer hover:stroke-[2] w-10"
+      />
+      {
+        Object.entries(labels[currentLang].nav).map(([key, value]) => (
+          <li class="py-1 hover:text-primary">
+            <a href={`/${currentLang} /${key}`}>{value}</a>
+          </li>
+        ))
+      }
+
+      <NavbarReact client:load />
+      <ThemeToggle client:load />
+    </ul>
+  </div>
+</nav>
+
+<script>
+  const closebtn = document.getElementById("close-btn");
+  const openbtn = document.getElementById("open-btn");
+  const modal = document.getElementById("menu-modal");
+  const menuItems = document.querySelectorAll("a");
+
+  closebtn?.addEventListener("click", () => {
+    modal?.classList.add("hidden");
+    openbtn?.classList.remove("hidden");
+  });
+  openbtn?.addEventListener("click", () => {
+    modal?.classList.remove("hidden");
+    openbtn?.classList.add("hidden");
+  });
+
+  menuItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      modal?.classList.add("hidden");
+    });
+  });
+</script>

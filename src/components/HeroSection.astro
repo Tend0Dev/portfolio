@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+import { labels } from "../i18n/ui";
+import Photo from "../assets/profile.jpg";
+import ArrowDown from "../assets/arrow-down.svg";
+import LogoWall from "./logoWall.astro";
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
+const projects = Object.fromEntries(
+  Object.entries(labels[currentLang].projects)
+);
+---
+
+<header class="flex flex-col mx-2 items-center font-bold text-center">
+  <div class="my-6">
+    <Image class="w-[230px] rounded-2xl mb-4" src={Photo} alt="profile" />
+  </div>
+  <div>
+    <h1 class="text-4xl mb-5">
+      <span class="opacity-0 animate-fade-in">{hero.greeting}</span>
+      <span class="text-primary opacity-0 animate-fade-in-delay-1"
+        >{hero.name}</span
+      >
+      <span class="opacity-0 animate-fade-in-delay-2">{hero.lastname}</span>
+    </h1>
+
+    <p class="text-lg text-foreground opacity-0 animate-fade-in-delay-3 mb-8">
+      {hero.role}
+    </p>
+
+    <button
+      class="bg-purple-500 py-3 px-4 rounded-xl cursor-pointer hover:bg-purple-600 opacity-0 animate-fade-in-delay-4"
+    >
+      <a class="" href={`/ ${currentLang} / ${projects}`}>{hero.view}</a>
+    </button>
+  </div>
+
+  <div class="absolute bottom-3 items-center flex flex-col">
+    <LogoWall />
+  </div>
+</header>
