@@ -14,7 +14,7 @@ const projects = Object.fromEntries(
 );
 ---
 
-<header class="flex flex-col relative mx-2 items-center font-bold text-center">
+<header class="flex flex-col mx-2 items-center font-bold text-center">
   <div class="my-6">
     <Image class="w-[230px] rounded-2xl mb-4" src={Photo} alt="profile" />
   </div>
@@ -32,13 +32,9 @@ const projects = Object.fromEntries(
     </p>
 
     <button
-      class="bg-purple-500 py-3 px-4 rounded-xl cursor-pointer hover:bg-purple-600 opacity-0 animate-fade-in-delay-4"
+      class="bg-purple-500 py-3 px-4 rounded-xl cursor-pointer hover:bg-purple-600 opacity-0 animate-fade-in-delay-4 mb-20"
     >
       <a class="" href={`/ ${currentLang} / ${projects}`}>{hero.view}</a>
     </button>
   </div>
-
-  <!-- <div class="mt-20">
-    <LogoWall />
-  </div> -->
 </header>
