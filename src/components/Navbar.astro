@@ -18,9 +18,7 @@ const t = useTranslation(currentLang as keyof typeof LanguagesList);
 const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
 ---
 
-<nav
-  class="mx-2 p-4 flex justify-between items-center bg-menu rounded-xl mt-3 mb-6"
->
+<nav class="mx-2 p-4 flex justify-between items-center bg-menu rounded-xl mt-3">
   <a href="#" class="flex items-center font-bold text-xl">
     Angel<span class="text-primary">{hero.portfolio}</span></a
   >
