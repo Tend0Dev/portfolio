@@ -5,7 +5,7 @@ import logoDark from "../assets/logoDark.png";
 import IconClose from "../assets/cross-1.svg";
 import IconOpen from "../assets/hamburger-menu.svg";
 import ThemeToggle from "./react/ThemeToggle";
-import NavbarReact from "./react/NavbarReact";
+import LanguageToggle from "./react/LanguageToggle";
 import { useTranslation } from "../i18n/utils";
 import { labels, type LanguagesList } from "../i18n/ui";
 
@@ -25,7 +25,7 @@ const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
 
   <IconOpen
     id="open-btn"
-    class="size-6 items-center cursor-pointer hover:stroke-[2]"
+    class="size-6 items-center cursor-pointer hover:stroke-foreground"
   />
 
   <div id="menu-modal" class="bg-black/70 fixed inset-0 hidden">
@@ -34,17 +34,17 @@ const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
     >
       <IconClose
         id="close-btn"
-        class="size-6 stroke-foreground cursor-pointer hover:stroke-[2] w-10"
+        class="size-6 stroke-foreground cursor-pointer hover:stroke-[2] absolute top-4 right-3 w-10"
       />
       {
         Object.entries(labels[currentLang].nav).map(([key, value]) => (
-          <li class="py-1 hover:text-primary">
+          <li class="py-1 hover:text-primary mt-3">
             <a href={`/${currentLang} /${key}`}>{value}</a>
           </li>
         ))
       }
 
-      <NavbarReact client:load />
+      <LanguageToggle client:load />
       <ThemeToggle client:load />
     </ul>
   </div>
@@ -63,6 +63,11 @@ const hero = Object.fromEntries(Object.entries(labels[currentLang].hero));
   openbtn?.addEventListener("click", () => {
     modal?.classList.remove("hidden");
     openbtn?.classList.add("hidden");
+  });
+
+  modal?.addEventListener("click", () => {
+    modal?.classList.add("hidden");
+    openbtn?.classList.remove("hidden");
   });
 
   menuItems.forEach((item) => {

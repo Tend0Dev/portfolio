@@ -1,9 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import { labels } from "../i18n/ui";
-import Photo from "../assets/profile.jpg";
+import Photo from "../assets/image/profile.jpg";
 import ArrowDown from "../assets/arrow-down.svg";
-import LogoWall from "./logoWall.astro";
+import SocialMedia from "./SocialMedia.astro";
 
 type Lang = keyof typeof labels;
 
@@ -14,10 +14,11 @@ const projects = Object.fromEntries(
 );
 ---
 
-<header class="flex flex-col mx-2 items-center font-bold text-center">
-  <div class="my-6">
-    <Image class="w-[230px] rounded-2xl mb-4" src={Photo} alt="profile" />
+<header class="flex flex-col mx-2 mb-6 items-center font-bold text-center">
+  <div class="mt-6">
+    <Image class="w-[230px] rounded-2xl" src={Photo} alt="profile" />
   </div>
+  <SocialMedia />
   <div>
     <h1 class="text-4xl mb-5">
       <span class="opacity-0 animate-fade-in">{hero.greeting}</span>

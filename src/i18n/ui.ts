@@ -22,7 +22,8 @@ export const labels = {
             "portfolio": "Portfolio"
         },
         "about": {
-            "title": "About Me",
+            "title": "About",
+            "me": "me",
             "description": "I am a passionate software developer with experience building modern web applications using React, Java, and other technologies. I enjoy creating clean and efficient solutions."
         },
         "projects": {
@@ -31,7 +32,12 @@ export const labels = {
         },
         "contact": {
             "title": "Contact Me",
-            "subtitle": "Let's work together!"
+            "subtitle": "Let's work together!",
+            "name": "Name",
+            "email": "Email",
+            "message": "Message",
+            "submit": "Submit",
+            "success": "Message sent successfully!",
         }
     },
     es: {
@@ -52,7 +58,8 @@ export const labels = {
             "portfolio": "Portafolio"
         },
         "about": {
-            "title": "Sobre mí",
+            "title": "Sobre",
+            "me": "mí",
             "description": "Soy un desarrollador de software apasionado con experiencia en la construcción de aplicaciones web modernas utilizando React, Java y otras tecnologías. Disfruto crear soluciones limpias y eficientes."
         },
         "projects": {
@@ -61,7 +68,12 @@ export const labels = {
         },
         "contact": {
             "title": "Contáctame",
-            "subtitle": "¡Trabajemos juntos!"
+            "subtitle": "¡Trabajemos juntos!",
+            "name": "Nombre",
+            "email": "Correo",
+            "message": "Mensaje",
+            "submit": "Enviar",
+            "success": "Mensaje enviado correctamente"
         }
 
     }

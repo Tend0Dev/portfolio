@@ -1,0 +1,18 @@
+---
+import { labels } from "../i18n/ui";
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+const about = Object.fromEntries(Object.entries(labels[currentLang].about));
+---
+
+<section class="mb-40">
+  <h2 class="text-4xl text-primary font-bold mb-7 text-center">
+    {about.title}
+    <span class="text-foreground">{about.me}</span>
+  </h2>
+  <p class="text-lg font-bold text-justify px-5">
+    {about.description}
+  </p>
+</section>

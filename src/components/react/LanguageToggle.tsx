@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Toggle } from "rsuite";
 import "rsuite/Toggle/styles/index.css";
 
-export default function NavbarReact() {
+export default function LanguageToggle() {
   // Detecta el idioma actual de la URL (ej: /en/, /es/)
   const currentLang = typeof window !== "undefined" 
     ? window.location.pathname.split("/")[1] || "en"

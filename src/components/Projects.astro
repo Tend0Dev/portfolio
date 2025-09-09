@@ -1,0 +1,90 @@
+---
+import { Image } from "astro:assets";
+import Photo from "../assets/image/profile.jpg";
+import Code from "../assets/code.svg";
+import Link from "../assets/link-2.svg";
+import { labels } from "../i18n/ui";
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+const projectObj = Object.fromEntries(
+  Object.entries(labels[currentLang].projects)
+);
+
+interface Projects {
+  title: string;
+  image: ImageMetadata;
+  github: string;
+  web: string;
+  stack: string[];
+}
+
+const myProjects: Projects[] = [
+  {
+    title: "TimerRubik",
+    image: Photo as ImageMetadata,
+    github: "https://github.com/Tend0Dev/TimerRubik.git",
+    web: "https://timer-rubik-web.vercel.app/",
+    stack: ["react", "tailwindcss", "typeScript", "vitejs"],
+  },
+];
+---
+
+<section id="" class="h-screen">
+  <div class="mb-10 text-center">
+    <h2 class="text-4xl text-primary font-bold mb-6">{projectObj.title}</h2>
+    <p class="text-lg font-bold text-foreground">{projectObj.subtitle}</p>
+  </div>
+
+  <div class="grid grid-cols-1 bg-menu p-4 rounded-lg">
+    {
+      myProjects.map((project) => (
+        <div class="group">
+          <a
+            href={project.web}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block"
+          >
+            <div class="rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 mb-4">
+              <Image
+                src={project.image}
+                alt={project.title}
+                class="w-full h-48 md:h-72 object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            </div>
+            <div class="flex items-center px-3">
+              <div class="flex flex-col">
+                <h4 class="text-2xl font-semibold mb-4">{project.title}</h4>
+                <div class="flex gap-2">
+                  {project.stack.map((icon) => (
+                    <img src={`/svg/${icon}.svg`} alt={icon} class="h-6 w-6" />
+                  ))}
+                </div>
+              </div>
+              <div class="flex gap-2 ml-auto">
+                <a
+                  target="_blank"
+                  href={project.github}
+                  aria-label="GitHub"
+                  class="size-14 flex justify-center items-center bg-background/40 rounded-md border-2 border-primary hover:bg-background/60 hover:scale-105 transition-300 ease-in-out hover:stroke-primary "
+                >
+                  <Code class="size-6" />
+                </a>
+                <a
+                  target="_blank"
+                  href={project.web}
+                  aria-label="link web"
+                  class="size-14 flex justify-center items-center bg-background/40 rounded-md border-2 border-primary hover:bg-background/60 hover:scale-105 transition-300 ease-in-out hover:stroke-primary"
+                >
+                  <Link class="size-5" />
+                </a>
+              </div>
+            </div>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</section>
