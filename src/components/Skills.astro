@@ -1,0 +1,63 @@
+---
+import { labels } from "../i18n/ui";
+
+interface skill {
+  name: "front" | "back" | "db" | "other";
+  stack: string[];
+}
+
+const mySkills: skill[] = [
+  {
+    name: "back",
+    stack: ["java", "javaScript", "dart"],
+  },
+  {
+    name: "front",
+    stack: [
+      "react",
+      "spring-boot",
+      "typeScript",
+      "tailwindcss",
+      "flutter",
+      "astro",
+      "next",
+    ],
+  },
+  {
+    name: "db",
+    stack: ["mysql", "mongodb", "postgresql"],
+  },
+  {
+    name: "other",
+    stack: ["docker", "git"],
+  },
+];
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+const skill = Object.fromEntries(Object.entries(labels[currentLang].skills));
+---
+
+<div>
+  <h2 class="text-4xl mb-10 text-center font-bold text-primary">
+    {skill.title}
+  </h2>
+  <div class="mb-20">
+    {
+      mySkills.map((category) => (
+        <div class="border border-primary py-3 mb-2 rounded-md">
+          <h3 class="font-bold text-center mb-2">
+            {labels[currentLang].category[category.name]}
+          </h3>
+          <div class="border border-primary/10 mx-20 mb-2" />
+          <div class="flex place-content-evenly my-2">
+            {category.stack.map((svg) => (
+              <img src={`/svg/${svg}.svg`} alt={svg} class="size-8" />
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

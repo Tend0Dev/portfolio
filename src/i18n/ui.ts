@@ -26,6 +26,16 @@ export const labels = {
             "me": "me",
             "description": "I am a passionate software developer with experience building modern web applications using React, Java, and other technologies. I enjoy creating clean and efficient solutions."
         },
+        "skills": {
+            "title": "Skills",
+        },
+        "category": {
+
+            "front": "Frond-End",
+            "back": "Back-End",
+            "db": "Databases",
+            "other": "other"
+        },
         "projects": {
             "title": "Projects",
             "subtitle": "Some of my featured work"
@@ -62,6 +72,16 @@ export const labels = {
             "me": "mí",
             "description": "Soy un desarrollador de software apasionado con experiencia en la construcción de aplicaciones web modernas utilizando React, Java y otras tecnologías. Disfruto crear soluciones limpias y eficientes."
         },
+        "skills": {
+            "title": "Habilidades",
+        },
+        "category": {
+            "front": "Frond-End",
+            "back": "Back-End",
+            "db": "Base de datos",
+            "other": "otros"
+        },
+        
         "projects": {
             "title": "Proyectos",
             "subtitle": "Algunos de mis trabajos destacados"
