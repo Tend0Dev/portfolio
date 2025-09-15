@@ -31,10 +31,10 @@ export const labels = {
         },
         "category": {
 
-            "front": "Frond-End",
-            "back": "Back-End",
+            "programming": "Programming languages",
+            "frameworks": "Frameworks",
             "db": "Databases",
-            "other": "other"
+            "other": "Other"
         },
         "projects": {
             "title": "Projects",
@@ -76,10 +76,10 @@ export const labels = {
             "title": "Habilidades",
         },
         "category": {
-            "front": "Frond-End",
-            "back": "Back-End",
+            "programming": "Lenguajes de programación",
+            "frameworks": "Frameworks",
             "db": "Base de datos",
-            "other": "otros"
+            "other": "Otros"
         },
         
         "projects": {

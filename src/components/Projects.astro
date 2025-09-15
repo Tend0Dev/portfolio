@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Photo from "../assets/image/profile.jpg";
+import Timer from "../assets/image/timer.jpg";
 import Code from "../assets/code.svg";
 import Link from "../assets/link-2.svg";
 import { labels } from "../i18n/ui";
@@ -23,7 +23,7 @@ interface Projects {
 const myProjects: Projects[] = [
   {
     title: "TimerRubik",
-    image: Photo as ImageMetadata,
+    image: Timer as ImageMetadata,
     github: "https://github.com/Tend0Dev/TimerRubik.git",
     web: "https://timer-rubik-web.vercel.app/",
     stack: ["react", "tailwindcss", "typeScript", "vitejs"],
