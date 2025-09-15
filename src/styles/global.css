@@ -158,23 +158,3 @@
     display: none !important;
   }
 }
-
-/** tailwindcss-merge:ignore */
-@layer base {
-  @font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("/fonts/inter-v3-latin-regular.woff2") format("woff2"),
-         url("/fonts/inter-v3-latin-regular.woff") format("woff");
-  }
-
-  @font-face {
-    font-family: "Inter";
-    font-weight: 100 900;
-    font-display: swap;
-    font-style: italic;
-    src: url("/fonts/inter-v3-latin-italic.woff2") format("woff2"),
-         url("/fonts/inter-v3-latin-italic.woff") format("woff");
-  }
-}
