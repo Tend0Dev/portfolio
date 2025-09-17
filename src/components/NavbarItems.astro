@@ -1,0 +1,66 @@
+---
+import ThemeToggle from "./react/ThemeToggle";
+import LanguageToggle from "./react/LanguageToggle";
+import { labels } from "../i18n/ui";
+
+type Lang = keyof typeof labels;
+
+const currentLang = (Astro.currentLocale || "en") as Lang;
+
+interface Props {
+  isRaw?: boolean;
+}
+
+const { isRaw = false } = Astro.props;
+---
+
+<ul
+  class={` flex justify-center ${isRaw ? "flex-row hidden xl:flex gap-8" : "flex-col items-center"}`}
+>
+  {
+    Object.entries(labels[currentLang].nav).map(([key, value]) => {
+      let sectionId = "";
+      let href = "";
+      if (key === " ") {
+        sectionId = "home";
+        href = `#home`;
+      } else {
+        sectionId = key;
+        href = `/#${sectionId}`;
+      }
+      return (
+        <li class="py-1 mt-3 hover:text-primary">
+          <a href={href} class="navbar-link" data-section={sectionId}>
+            {value}
+          </a>
+        </li>
+      );
+    })
+  }
+
+  <div class="my-3">
+    <LanguageToggle client:load />
+  </div>
+
+  <div class="flex justify-center items-center">
+    <ThemeToggle client:load />
+  </div>
+  <script is:inline>
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".navbar-link").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          const href = link.getAttribute("href");
+          // Prevenir si es un enlace interno (#...)
+          if (href && (href.startsWith("/#") || href === "#home")) {
+            e.preventDefault();
+            const sectionId = link.getAttribute("data-section");
+            const section = document.getElementById(sectionId);
+            if (section) {
+              section.scrollIntoView({ behavior: "smooth" });
+            }
+          }
+        });
+      });
+    });
+  </script>
+</ul>

@@ -14,28 +14,41 @@ const projects = Object.fromEntries(
 );
 ---
 
-<header class="flex flex-col mb-6 items-center font-bold text-center">
-  <div class="mt-6">
-    <Image class="w-[230px] rounded-2xl" src={Photo} alt="profile" />
-  </div>
-  <SocialMedia />
-  <div>
-    <h1 class="text-4xl mb-5">
-      <span class="opacity-0 animate-fade-in">{hero.greeting}</span>
-      <span class="text-primary opacity-0 animate-fade-in-delay-1"
-        >{hero.name}</span
+<header id="home">
+  <div
+    class="mb-6 items-center font-bold text-center xl:grid xl:grid-cols-2 xl:mt-16"
+  >
+    <div class="w-full">
+      <Image
+        class="w-[230px] xl:w-[300px] rounded-2xl mx-auto"
+        src={Photo}
+        alt="profile"
+      />
+      <SocialMedia />
+    </div>
+
+    <div>
+      <h1 class="text-4xl mb-5 xl:text-5xl">
+        <span class="opacity-0 animate-fade-in">{hero.greeting}</span>
+        <span class="text-primary opacity-0 animate-fade-in-delay-1"
+          >{hero.name}</span
+        >
+        <span class="opacity-0 animate-fade-in-delay-2">{hero.lastname}</span>
+      </h1>
+
+      <p
+        class="text-lg text-foreground opacity-0 animate-fade-in-delay-3 mb-8 xl:text-xl"
       >
-      <span class="opacity-0 animate-fade-in-delay-2">{hero.lastname}</span>
-    </h1>
+        {hero.role}
+      </p>
+    </div>
+  </div>
 
-    <p class="text-lg text-foreground opacity-0 animate-fade-in-delay-3 mb-8">
-      {hero.role}
-    </p>
-
+  <div class="text-center">
     <button
-      class="bg-purple-500 py-3 px-4 rounded-xl cursor-pointer hover:bg-purple-600 opacity-0 animate-fade-in-delay-4 mb-20"
+      class="bg-purple-500 py-3 px-4 rounded-xl cursor-pointer hover:bg-purple-600 opacity-0 animate-fade-in-delay-4 mb-20 place-content-center items-center xl:px-12 xl:py-4 xl:text-xl xl:mt-4"
     >
-      <a class="" href={`/ ${currentLang} / ${projects}`}>{hero.view}</a>
+      <a class="" href="#projects">{hero.view}</a>
     </button>
   </div>
 </header>

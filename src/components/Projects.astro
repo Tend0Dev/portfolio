@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
+import Github from "../assets/social/github.svg";
 import Timer from "../assets/image/timer.jpg";
+import Extension from "../assets/image/extension.jpg";
 import Code from "../assets/code.svg";
 import Link from "../assets/link-2.svg";
 import { labels } from "../i18n/ui";
@@ -13,6 +15,7 @@ const projectObj = Object.fromEntries(
 );
 
 interface Projects {
+  key: keyof (typeof labels)[Lang]["projects"]["descriptions"];
   title: string;
   image: ImageMetadata;
   github: string;
@@ -22,25 +25,39 @@ interface Projects {
 
 const myProjects: Projects[] = [
   {
+    key: "timerRubik",
     title: "TimerRubik",
     image: Timer as ImageMetadata,
     github: "https://github.com/Tend0Dev/TimerRubik.git",
     web: "https://timer-rubik-web.vercel.app/",
     stack: ["react", "tailwindcss", "typeScript", "vitejs"],
   },
+  {
+    key: "extensionManager",
+    title: "Browser extension manager ui",
+    image: Extension as ImageMetadata,
+    github:
+      "https://github.com/Tend0Dev/Frontend-mentor-challenges/tree/main/Junior/browser-extension-manager-ui",
+    web: "https://frontend-mentor-challenges-zeta-teal.vercel.app/",
+    stack: ["react", "tailwindcss", "vitejs"],
+  },
 ];
 ---
 
-<section id="" class="h-screen">
+<section id="projects" class="">
   <div class="mb-10 text-center">
-    <h2 class="text-4xl text-primary font-bold mb-6">{projectObj.title}</h2>
-    <p class="text-lg font-bold text-foreground">{projectObj.subtitle}</p>
+    <h2 class="text-4xl text-primary font-bold mb-6 xl:text-5xl">
+      {projectObj.title}
+    </h2>
+    <p class="text-lg font-bold text-foreground xl:text-xl">
+      {projectObj.subtitle}
+    </p>
   </div>
 
-  <div class="grid grid-cols-1 bg-menu p-4 rounded-lg">
+  <div class="xl:grid xl:grid-cols-2 gap-4">
     {
       myProjects.map((project) => (
-        <div class="group">
+        <div class="group mb-4 bg-menu p-4 rounded-lg">
           <a
             href={project.web}
             target="_blank"
@@ -56,7 +73,10 @@ const myProjects: Projects[] = [
             </div>
             <div class="flex items-center px-3">
               <div class="flex flex-col">
-                <h4 class="text-2xl font-semibold mb-4">{project.title}</h4>
+                <h4 class="text-2xl font-semibold mb-2">{project.title}</h4>
+                <p class="mb-2 text-foreground text-sm xl:text-lg">
+                  {labels[currentLang].projects.descriptions[project.key]}
+                </p>
                 <div class="flex gap-2">
                   {project.stack.map((icon) => (
                     <img src={`/svg/${icon}.svg`} alt={icon} class="h-6 w-6" />
@@ -87,4 +107,15 @@ const myProjects: Projects[] = [
       ))
     }
   </div>
+  <a
+    href="https://github.com/Tend0Dev"
+    target="_blank"
+    class="flex justify-center"
+    ><button
+      class="flex text-center bg-menu hover:bg-menu/90 text-lg xl:text-xl px-6 xl:px-28 items-center gap-4 py-3 rounded-lg mt-6 mb-20"
+    >
+      {projectObj.button}
+      <Github class="size-5" />
+    </button>
+  </a>
 </section>

@@ -7,12 +7,18 @@ const currentLang = (Astro.currentLocale || "en") as Lang;
 const about = Object.fromEntries(Object.entries(labels[currentLang].about));
 ---
 
-<section class="mb-40">
-  <h2 class="text-4xl text-primary font-bold mb-7 text-center">
+<section id="about" class="mb-28">
+  <h2 class="text-4xl text-primary font-bold mb-16 text-center xl:text-5xl">
     {about.title}
     <span class="text-foreground">{about.me}</span>
   </h2>
-  <p class="text-lg font-bold text-justify px-5">
-    {about.description}
-  </p>
+
+  <div class="flex flex-col gap-12 xl:grid xl: grid-cols-2">
+    <p class="text-lg font-bold text-justify px-5 xl:text-xl">
+      {about.description}
+    </p>
+    <p class="text-lg font-bold text-justify px-5 xl:text-xl">
+      {about.label}
+    </p>
+  </div>
 </section>

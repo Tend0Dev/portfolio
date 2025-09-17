@@ -38,11 +38,13 @@ const currentLang = (Astro.currentLocale || "en") as Lang;
 const skill = Object.fromEntries(Object.entries(labels[currentLang].skills));
 ---
 
-<div>
-  <h2 class="text-4xl mb-10 text-center font-bold text-primary">
+<section id="skills">
+  <h2
+    class="text-4xl mb-10 text-center font-bold text-primary xl:text-5xl xl:mb-14"
+  >
     {skill.title}
   </h2>
-  <div class="mb-20">
+  <div class="mb-20 xl:grid xl:grid-cols-2 gap-4">
     {
       mySkills.map((category) => (
         <div class="border border-primary py-3 mb-2 rounded-md">
@@ -59,4 +61,4 @@ const skill = Object.fromEntries(Object.entries(labels[currentLang].skills));
       ))
     }
   </div>
-</div>
+</section>

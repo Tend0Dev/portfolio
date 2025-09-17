@@ -13,11 +13,14 @@ export default function LanguageToggle() {
   const handleToggle = (checked: boolean) => {
     setChecked(checked);
     const newLang = checked ? "es" : "en";
-
-    // Redirige a la misma ruta pero en otro idioma
-    const parts = window.location.pathname.split("/");
-    parts[1] = newLang; // sustituye el idioma
-    const newPath = parts.join("/") || "/";
+    let newPath;
+    if (newLang === "en") {
+      newPath = "/";
+    } else {
+      const parts = window.location.pathname.split("/");
+      parts[1] = newLang;
+      newPath = parts.join("/") || "/";
+    }
     window.location.href = newPath;
   };
 

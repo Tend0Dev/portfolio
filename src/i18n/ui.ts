@@ -8,6 +8,7 @@ export const labels = {
         "nav": {
             " ": "Home",
             "about": "About",
+            "skills": "Skills",
             "projects": "Projects",
             "contact": "Contact"
         },
@@ -24,13 +25,14 @@ export const labels = {
         "about": {
             "title": "About",
             "me": "me",
-            "description": "I am a passionate software developer with experience building modern web applications using React, Java, and other technologies. I enjoy creating clean and efficient solutions."
+            "description": "With over 1 year of experience in web development, I specialize in creating responsive, accessible, and performant web applications using modern technologies.",
+            "label": "I'm passionate about creating elegant solutions to complex problems, and I'm constantly learning new techniques to stay at the forefront of the ever-evolving web landscape."
+
         },
         "skills": {
             "title": "Skills",
         },
         "category": {
-
             "programming": "Programming languages",
             "frameworks": "Frameworks",
             "db": "Databases",
@@ -38,11 +40,17 @@ export const labels = {
         },
         "projects": {
             "title": "Projects",
-            "subtitle": "Some of my featured work"
+            "subtitle": "Some of my featured work",
+            "button": "More projects on",
+            "descriptions": {
+                "timerRubik": "Ad-free timer for speedcubers.",
+                "extensionManager": "FrontendMentor challenge."
+            }
         },
         "contact": {
             "title": "Contact Me",
             "subtitle": "Let's work together!",
+            "hidden": "Have a question or a project in mind? Feel free to reach out.",
             "name": "Name",
             "email": "Email",
             "message": "Message",
@@ -53,7 +61,8 @@ export const labels = {
     es: {
         "nav": {
             " ": "Inicio",
-            "about": "Acerca de",
+            "about": "Sobre mi",
+            "skills": "Habilidades",
             "projects": "Proyectos",
             "contact": "Contacto"
         },
@@ -70,7 +79,9 @@ export const labels = {
         "about": {
             "title": "Sobre",
             "me": "mí",
-            "description": "Soy un desarrollador de software apasionado con experiencia en la construcción de aplicaciones web modernas utilizando React, Java y otras tecnologías. Disfruto crear soluciones limpias y eficientes."
+            "description": "Con más de 1 año de experiencia en desarrollo web, me especializo en crear aplicaciones web responsivas, accesibles y de alto rendimiento utilizando tecnologías modernas.",
+            "label": "Me apasiona crear soluciones elegantes a problemas complejos, y estoy en constante aprendizaje nuevas técnicas para mantenerme a la vanguardia del siempre cambiante panorama web."
+
         },
         "skills": {
             "title": "Habilidades",
@@ -84,11 +95,17 @@ export const labels = {
         
         "projects": {
             "title": "Proyectos",
-            "subtitle": "Algunos de mis trabajos destacados"
+            "subtitle": "Algunos de mis trabajos destacados",
+            "button": "Más proyectos en",
+            "descriptions": {
+                "timerRubik": "Temporizador para speedcubers sin anuncios.",
+                "extensionManager": "Reto de FrontendMentor."
+            }
         },
         "contact": {
             "title": "Contáctame",
             "subtitle": "¡Trabajemos juntos!",
+            "hidden": "¿Tienes una pregunta o un proyecto en mente? No dudes en contactarme.",
             "name": "Nombre",
             "email": "Correo",
             "message": "Mensaje",
