@@ -9,22 +9,22 @@ interface skill {
 const mySkills: skill[] = [
   {
     name: "programming",
-    stack: ["java", "javaScript", "dart"],
+    stack: ["php", "javaScript", "dart"],
   },
   {
     name: "frameworks",
     stack: [
       "react",
-      "spring-boot",
+      "laravel",
       "typeScript",
-      "tailwindcss",
+      "tailwindCSS",
       "flutter",
       "next",
     ],
   },
   {
     name: "db",
-    stack: ["mysql", "mongodb", "postgresql"],
+    stack: ["mySQL", "mongoDB", "postgreSQL"],
   },
   {
     name: "other",
@@ -54,7 +54,10 @@ const skill = Object.fromEntries(Object.entries(labels[currentLang].skills));
           <div class="border border-primary/10 mx-20 mb-2" />
           <div class="flex place-content-evenly my-2">
             {category.stack.map((svg) => (
-              <img src={`/svg/${svg}.svg`} alt={svg} class="size-8" />
+              <div class="flex flex-col items-center mx-2">
+                <img src={`/svg/${svg}.svg`} alt={svg} class="size-8" />
+                <p class="text-xs mt-1">{svg.charAt(0).toUpperCase() + svg.slice(1)}</p>
+              </div>
             ))}
           </div>
         </div>
