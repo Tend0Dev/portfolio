@@ -16,7 +16,7 @@ export const labels = {
             "greeting": "Hi, I'm ",
             "name": "Angel ",
             "lastname": "Mejia",
-            "role": "Frontend Developer with React & Backend with PHP",
+            "role": "Frontend Developer with React & Backend with Java",
             "cta": "See my work",
             "view": "View my work",
             "scroll": "Scroll",
@@ -25,8 +25,8 @@ export const labels = {
         "about": {
             "title": "About",
             "me": "me",
-            "description": "With over 1 year of experience in web development, I specialize in creating responsive, accessible, and performant web applications using modern technologies.",
-            "label": "I'm passionate about creating elegant solutions to complex problems, and I'm constantly learning new techniques to stay at the forefront of the ever-evolving web landscape."
+            "description": "Software developer with experience in full-stack web development. Recognized for adaptability, teamwork, and a results-oriented approach to creating innovative, scalable, and efficient technological solutions. I have advanced training in the design and implementation of digital solutions. I stand out for my analytical mindset, attention to detail, and strong commitment to my work. I am seeking to take my first professional steps in an innovative company.",
+            
 
         },
         "skills": {
@@ -70,7 +70,7 @@ export const labels = {
             "greeting": "Hola, soy ",
             "name": "Angel ",
             "lastname": "Mejia",
-            "role": "Desarrollador Frontend con React y Backend con PHP",
+            "role": "Desarrollador Frontend con React y Backend con Java",
             "cta": "Ver mi trabajo",
             "view": "Mira mi trabajo",
             "scroll": "Scroll",
@@ -79,8 +79,8 @@ export const labels = {
         "about": {
             "title": "Sobre",
             "me": "mí",
-            "description": "Con más de 1 año de experiencia en desarrollo web, me especializo en crear aplicaciones web responsivas, accesibles y de alto rendimiento utilizando tecnologías modernas.",
-            "label": "Me apasiona crear soluciones elegantes a problemas complejos, y estoy en constante aprendizaje nuevas técnicas para mantenerme a la vanguardia del siempre cambiante panorama web."
+            "description": "Desarrollador de software con experiencia en desarrollo web full-stack. Reconocido por mi capacidad de adaptación, trabajo en equipo y orientación a resultados en la creación de soluciones tecnológicas innovadoras, escalables y eficientes. Cuento con formación avanzada en el diseño e implementación de soluciones digitales. Me destaco por mi enfoque analítico, atención al detalle y compromiso con el trabajo. Busco dar mis primeros pasos profesionales en una compañía innovadora.",
+            
 
         },
         "skills": {
@@ -99,7 +99,7 @@ export const labels = {
             "button": "Más proyectos en",
             "descriptions": {
                 "timerRubik": "Temporizador para speedcubers sin anuncios.",
-                "extensionManager": "Reto de FrontendMentor."
+                "extensionManager": "Reto de FrontendMentorCallenge."
             }
         },
         "contact": {

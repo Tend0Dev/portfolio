@@ -13,12 +13,10 @@ const about = Object.fromEntries(Object.entries(labels[currentLang].about));
     <span class="text-foreground">{about.me}</span>
   </h2>
 
-  <div class="flex flex-col gap-12 xl:grid xl: grid-cols-2">
+  <div class="flex flex-col gap-12 ">
     <p class="text-lg font-bold text-justify px-5 xl:text-xl">
       {about.description}
     </p>
-    <p class="text-lg font-bold text-justify px-5 xl:text-xl">
-      {about.label}
-    </p>
+    
   </div>
 </section>

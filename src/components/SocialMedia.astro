@@ -5,48 +5,70 @@ import Linkedin from "../assets/social/linkedin.svg";
 import Github from "../assets/social/github.svg";
 import ArrowDown from "../assets/arrow-down.svg";
 ---
-
 <div class="flex items-center place-content-evenly w-full mb-10 -mt-3">
-  <a
-    class="bg-gray-700/40 textforeground p-2 rounded-full cursor-pointer hover:scale-105"
-    href="https://github.com/Tend0Dev"
-    target="_blank"
-    aria-label="gmail"
-  >
-    <Github class="size-6" />
-  </a>
-  <a
-    class="bg-slate-200 p-2 rounded-full cursor-pointer hover:scale-105"
-    href="https://linkedin.com/in/angel-mejia01"
-    target="_blank"
-    aria-label="gmail"
-  >
-    <Linkedin class="size-6" />
-  </a>
-  <a
-    class="bg-slate-200 p-2 rounded-full cursor-pointer hover:scale-105"
-    href="https://mail.google.com/mail/?view=cm&fs=1&to=angelmejiaprz@gmail.com&su=Hey%20Angel!"
-    target="_blank"
-    aria-label="gmail"
-  >
-    <Gmail class="size-6" />
-  </a>
+  <!-- GitHub -->
+  <div class="flex flex-col items-center gap-1">
+    <a
+      class="bg-gray-700/40 text-foreground p-2 rounded-full cursor-pointer hover:scale-105"
+      href="https://github.com/Tend0Dev"
+      target="_blank"
+      aria-label="GitHub"
+    >
+      <Github class="size-6" />
+    </a>
+    <span class="text-xs text-muted-foreground">GitHub</span>
+  </div>
 
-  <a
-    class="bg-gradient-to-tr from-pink-500 via-fuchsia-500 to-indigo-500 p-2 rounded-full cursor-pointer hover:scale-105"
-    href="https://www.instagram.com/angelmejiaprz/"
-    target="_blank"
-    aria-label="instagram"
-  >
-    <Instagram class="size-6" />
-  </a>
+  <!-- LinkedIn -->
+  <div class="flex flex-col items-center gap-1">
+    <a
+      class="bg-slate-200 p-2 rounded-full cursor-pointer hover:scale-105"
+      href="https://linkedin.com/in/angel-mejia01"
+      target="_blank"
+      aria-label="LinkedIn"
+    >
+      <Linkedin class="size-6" />
+    </a>
+    <span class="text-xs text-muted-foreground">LinkedIn</span>
+  </div>
 
-  <a
-    href="/CV-ANGEL-MEJIA.pdf"
-    download
-    class="bg-primary text-background p-2 rounded-full cursor-pointer hover:bg-primary/80 animate-float"
-    aria-label="Download CV"
-  >
-    <ArrowDown class="size-[22px]" />
-  </a>
+  <!-- Gmail -->
+  <div class="flex flex-col items-center gap-1">
+    <a
+      class="bg-slate-200 p-2 rounded-full cursor-pointer hover:scale-105"
+      href="https://mail.google.com/mail/?view=cm&fs=1&to=angelmejiaprz@gmail.com&su=Hey%20Angel!"
+      target="_blank"
+      aria-label="Gmail"
+    >
+      <Gmail class="size-6" />
+    </a>
+    <span class="text-xs text-muted-foreground">Gmail</span>
+  </div>
+
+  <!-- Instagram -->
+  <div class="flex flex-col items-center gap-1">
+    <a
+      class="bg-gradient-to-tr from-pink-500 via-fuchsia-500 to-indigo-500 p-2 rounded-full cursor-pointer hover:scale-105"
+      href="https://www.instagram.com/angelmejiaprz/"
+      target="_blank"
+      aria-label="Instagram"
+    >
+      <Instagram class="size-6" />
+    </a>
+    <span class="text-xs text-muted-foreground">Instagram</span>
+  </div>
+
+  <!-- CV -->
+  <div class="flex flex-col items-center gap-1">
+    <a
+      href="/Angel-Manuel-Mejia-Perez-2026.pdf"
+      download
+      class="bg-primary text-background p-2 rounded-full cursor-pointer hover:bg-primary/80 animate-float"
+      aria-label="Download CV"
+    >
+      <ArrowDown class="size-[22px]" />
+    </a>
+    <span class="text-xs text-muted-foreground">Download CV</span>
+  </div>
 </div>
+
